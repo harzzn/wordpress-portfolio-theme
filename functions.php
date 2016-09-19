@@ -9,7 +9,9 @@ function wppt_enqueue_styles() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/node_modules/font-awesome/css/font-awesome.css' );
 	wp_enqueue_style( 'owl.carousel', get_template_directory_uri() . '/node_modules/owlcarousel/owl-carousel/owl.carousel.css' );
 	wp_enqueue_style( 'owl.theme', get_template_directory_uri() . '/node_modules/owlcarousel/owl-carousel/owl.theme.css', array( 'owl.carousel' ) );
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/styles/main.css', array( 'bootstrap', 'animate', 'font-awesome', 'owl.carousel', 'owl.theme' ) );
+
+	wp_enqueue_style( 'grid', get_template_directory_uri() . '/styles/grid.css' );
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/styles/main.css', array( 'bootstrap', 'animate', 'font-awesome', 'owl.carousel', 'owl.theme', 'grid' ) );
 }
 
 function wppt_enqueue_scripts() {
