@@ -111,7 +111,7 @@
 @media only screen and (min-width : 768px) {
 
 	.grid-item--post:hover,
-	.grid-item--category:hover {
+	.grid-item--category:not(.grid-item--active):hover {
 		transform: scale(1.05);
 	}
 
@@ -121,20 +121,22 @@
 		-webkit-filter: brightness(50%);
 	}
 
-	.grid-item:hover h2  {
+	.grid-item:hover h2,
+	.grid-item--active h2 {
 		color: rgb(255, 55, 55);
 		transform: translateY(0) scale(1.2);
 		position: relative;
 	}
 
 	.grid-item--post:hover p,
-	.grid-item--category:hover p {
+	.grid-item--category:hover p,
+	.grid-item--active p {
 		transform: scale(1.2);
 	}
 
-	.grid-item--category p,
+	.grid-item--category:not(.grid-item--active) p,
 	.grid-item--post p,
-	.grid-item .grid-item__hover-reveal {
+	.grid-item:not(.grid-item--active) .grid-item__hover-reveal {
 		opacity: 0;
 	}
 
