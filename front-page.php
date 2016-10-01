@@ -14,12 +14,12 @@
 
 		<div class="grid-item grid-item--category col-lg-4 col-sm-6 col-xs-12">
 			<!-- add inner element for column content -->
-			<a href="index.html" class="grid-item__content">
+			<a href="index.html" class="grid-item__content js-link-zoom">
 				<div class="grid-item__content__wrapper">
-					<h2 class="grid-item__headline">#products</h2>
-					<div class="show-on-hover">
+					<h2>#products</h2>
+					<div class="grid-item__hover-reveal">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat sed laborum dolorem</p>
-						<button class="btn btn-transparent read-more-button">Read More <i class="fa fa-angle-double-right read-more-button__icon" aria-hidden="true"></i></button>
+						<button class="btn transparent-button transparent-button--black read-more-button"><?php _e( 'See More', 'wordpress-portfolio-theme' ); ?> <i class="fa fa-angle-double-right read-more-button__icon" aria-hidden="true"></i></button>
 					</div>
 				</div>
 			</a>
@@ -33,14 +33,21 @@
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<div class="grid-item grid-item--post col-lg-4 col-sm-6 col-xs-12">
-				<a href="<?php the_permalink(); ?>" class="grid-item__content">
-					<div class="background-cover" style="background-image: linear-gradient( 180deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) ), url( https://placeimg.com/800/800/tech )"></div>
+				<a href="<?php the_permalink(); ?>" class="grid-item__content js-link-zoom">
+					<div class="grid-item__background-cover" style="<?php wppt_the_grid_item_background(); ?>"></div>
 					<div class="grid-item__content__wrapper">
-						<h2 class="grid-item__headline"><?php the_title(); ?></h2>
-						<div class="show-on-hover">
+						<h2><?php the_title(); ?></h2>
+						<div class="grid-item__hover-reveal">
 							<?php the_excerpt(); ?>
-							<iframe src="https://yvoschaap.com/producthunt/counter.html#href=http%3A%2F%2Fhtmltowordpress.io%2F&amp;layout=wide" width="100" height="25" scrolling="no" frameborder="0" allowtransparency="true" class="center-block"></iframe>
-							<button class="btn btn-transparent read-more-button"><?php _e( 'Read More', 'wordpress-portfolio-theme' ); ?> <i class="fa fa-angle-double-right read-more-button__icon" aria-hidden="true"></i></button>
+
+							<?php
+								$external_info = get_post_meta( get_the_ID(), 'wppt_external_info', true );
+								if ( ! empty( $external_info ) ) {
+									echo $external_info;
+								}
+							?>
+
+							<button class="btn transparent-button read-more-button"><?php _e( 'Read More', 'wordpress-portfolio-theme' ); ?> <i class="fa fa-angle-double-right read-more-button__icon" aria-hidden="true"></i></button>
 						</div>
 					</div>
 				</a>

@@ -1,111 +1,10 @@
-
-.grid-item--author h1,
-.grid-item--category h2 {
-	font-weight: 300;
-}
-
-
 .grid {
 	margin-top: 20px;
 }
 
-.grid-item:not(.grid-item--author),
+.grid-item,
 .grid-item p {
 	transition: all .5s ease-in-out;
-}
-
-.grid-item:not(.grid-item--author):hover {
-	transform: scale(1.05);
-}
-
-.grid-item__content:hover,
-.grid-item__content:focus {
-	text-decoration: none !important;
-}
-
-.grid-item:hover .background-cover {
-	transform: scale(1.1);
-	filter: brightness(50%);
-	-webkit-filter: brightness(50%);
-}
-
-.background-cover,
-.grid-item__headline {
-	transition: all .25s ease-in-out;
-}
-
-.grid-item:hover h2 {
-	color: rgb(255, 55, 55);
-}
-
-.grid-item h2 {
-	font-size: 30px;
-}
-
-.grid-item p {
-	font-size: 13px;
-}
-
-
-.grid-item--post:hover p,
-.grid-item--category:hover p {
-	transform: scale(1.2);
-}
-
-.grid-item--post h2  {
-	text-shadow: black 0px 1px 0px;
-}
-
-.grid-item h2 {
-	color: white;
-	z-index: 1;
-	margin-top: 0;
-	text-align: center;
-}
-
-.grid-item__headline {
-	transform: translateY(100%);
-	position: absolute;
-	left: 0;
-	right: 0;
-}
-
-.grid-item--post:hover .grid-item__headline,
-.grid-item--category:hover .grid-item__headline {
-	transform: translateY(0) scale(1.2);
-	position: relative;
-}
-
-.grid-item--category h2 {
-	margin-bottom: 20px;
-}
-
-.grid-item--category h2,
-.grid-item--category p,
-.grid-item--category .btn-transparent {
-	color: #444444;
-}
-
-.grid-item--category .btn-transparent {
-	border-color: #444444;
-}
-
-.grid-item--category p,
-.grid-item--post p,
-.grid-item--category .show-on-hover,
-.grid-item--post .show-on-hover {
-	opacity: 0;
-}
-
-.grid-item--post p {
-	color: white;
-}
-
-.grid-item--category:hover p,
-.grid-item:hover p,
-.grid-item--category:hover .show-on-hover,
-.grid-item:hover .show-on-hover {
-	opacity: 1;
 }
 
 .grid-item__content {
@@ -119,13 +18,129 @@
 	overflow: hidden;
 }
 
+.grid-item__content:hover,
+.grid-item__content:focus {
+	text-decoration: none !important;
+}
+
+.grid-item__content--long {
+	height: 820px;
+	margin-bottom: 20px;
+}
+
 .grid-item__content__wrapper {
 	z-index: 1;
 	width: 75%;
 	position: relative;
 }
 
-.grid-item__content--long {
-	height: 820px;
+.grid-item__background-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	filter: brightness(100%);
+	-webkit-filter: brightness(100%);
+}
+
+.grid-item__background-cover,
+.grid-item h2 {
+	transition: all .25s ease-in-out;
+}
+
+.grid-item h2 {
+	font-size: 30px;
+	z-index: 1;
+	margin-top: 0;
+	text-align: center;
+	color: white;
+	transform: translateY(100%);
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.grid-item--author h1,
+.grid-item--category h2 {
+	font-weight: 300;
+}
+
+.grid-item--post h2 {
+	text-shadow: black 0px 1px 0px;
+}
+
+.grid-item--category h2 {
 	margin-bottom: 20px;
+}
+
+.grid-item--category h2,
+.grid-item--category p {
+	color: #444444;
+}
+
+.grid-item p {
+	font-size: 13px;
+}
+
+.grid-item--post p {
+	color: white;
+}
+
+@media only screen and (max-width : 767px) {
+	.grid-item__background-cover {
+		filter: brightness(50%);
+		-webkit-filter: brightness(50%);
+	}
+
+	.grid-item h2  {
+		color: rgb(255, 55, 55);
+		transform: translateY(0) scale(1.2);
+		position: relative;
+	}
+
+	.grid-item--post p,
+	.grid-item--category p {
+		transform: scale(1.2);
+	}
+}
+
+@media only screen and (min-width : 768px) {
+
+	.grid-item--post:hover,
+	.grid-item--category:hover {
+		transform: scale(1.05);
+	}
+
+	.grid-item:hover .grid-item__background-cover {
+		transform: scale(1.1);
+		filter: brightness(50%);
+		-webkit-filter: brightness(50%);
+	}
+
+	.grid-item:hover h2  {
+		color: rgb(255, 55, 55);
+		transform: translateY(0) scale(1.2);
+		position: relative;
+	}
+
+	.grid-item--post:hover p,
+	.grid-item--category:hover p {
+		transform: scale(1.2);
+	}
+
+	.grid-item--category p,
+	.grid-item--post p,
+	.grid-item .grid-item__hover-reveal {
+		opacity: 0;
+	}
+
+	.grid-item--category:hover p,
+	.grid-item:hover p,
+	.grid-item:hover .grid-item__hover-reveal {
+		opacity: 1;
+	}
 }
