@@ -1,5 +1,5 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<div class="grid-item grid-item--post col-lg-4 col-sm-6 col-xs-12">
+	<article class="grid-item grid-item--post col-lg-4 col-sm-6 col-xs-12">
 		<a href="<?php the_permalink(); ?>" class="grid-item__content js-link-zoom">
 			<div class="grid-item__background-cover" style="<?php wppt_the_grid_item_background(); ?>"></div>
 			<div class="grid-item__content__wrapper">
@@ -14,11 +14,11 @@
 						}
 					?>
 
-					<button class="btn transparent-button read-more-button"><?php _e( 'Read More', 'wordpress-portfolio-theme' ); ?> <i class="fa fa-angle-double-right read-more-button__icon" aria-hidden="true"></i></button>
+					<button title="Read More About <?php echo get_the_title(); ?>" class="btn transparent-button read-more-button"><?php _e( 'Read More', 'wordpress-portfolio-theme' ); ?> <i class="fa fa-angle-double-right read-more-button__icon" aria-hidden="true"></i></button>
 				</div>
 			</div>
 		</a>
-	</div>
+	</article>
 
 	<?php if ( is_home() && 0 === $wp_query->current_post ) : ?>
 		<?php get_template_part( 'template-parts/front-page', 'author-bio-container-medium' ); ?>

@@ -42,3 +42,7 @@ function wppt_get_grid_item_background() {
 
 	return $background . ';';
 }
+
+function wppt_get_author() {
+	return get_user_by( 'email', get_bloginfo( 'admin_email' ) );
+}
