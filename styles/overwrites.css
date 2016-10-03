@@ -2,6 +2,21 @@
  * Bootstrap overwrites and extends
  */
 
+body {
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+h1,
+h2 {
+	font-weight: 300;
+}
+
+.container-fluid {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
 .col-xs-1,
 .col-sm-1,
 .col-md-1,
@@ -52,4 +67,8 @@
 .col-lg-12 {
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+.lead {
+	font-size: 18px;
 }

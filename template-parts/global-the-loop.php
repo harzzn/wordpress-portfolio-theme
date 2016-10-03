@@ -1,7 +1,7 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<article class="grid-item grid-item--post col-lg-4 col-sm-6 col-xs-12">
 		<a href="<?php the_permalink(); ?>" class="grid-item__content js-link-zoom">
-			<div class="grid-item__background-cover" style="<?php wppt_the_grid_item_background(); ?>"></div>
+			<div class="grid-item__background-cover background-cover" style="<?php wppt_the_grid_item_background(); ?>"></div>
 			<div class="grid-item__content__wrapper">
 				<h2><?php the_title(); ?></h2>
 				<div class="grid-item__hover-reveal">
