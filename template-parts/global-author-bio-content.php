@@ -6,7 +6,12 @@
 <aside class="grid-item__content__wrapper text-center">
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="author" class="home-link">
 		<img src="<?php echo get_avatar_url( $author->ID, array( 'size' => 400 ) ); ?>" alt="<?php echo $name; ?>" class="avatar img-responsive center-block" />
-		<h1><?php echo $name; ?></h1>
+
+		<?php if ( is_single() || is_page() ) : ?>
+			<h2><?php echo $name; ?></h2>
+		<?php else : ?>
+			<h1><?php echo $name; ?></h1>
+		<?php endif; ?>
 	</a>
 
 	<?php if ( defined( 'WPPT_AUTHOR_LINKS' ) ) : ?>

@@ -14,7 +14,8 @@ function wppt_enqueue_styles() {
 
 	wp_enqueue_style( 'overwrites', get_template_directory_uri() . '/styles/overwrites.css' );
 	wp_enqueue_style( 'grid', get_template_directory_uri() . '/styles/grid.css' );
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/styles/main.css', array( 'bootstrap', 'animate', 'font-awesome', 'owl.carousel', 'owl.theme', 'overwrites', 'grid' ) );
+	wp_enqueue_style( 'single', get_template_directory_uri() . '/styles/single.css' );
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/styles/main.css', array( 'bootstrap', 'animate', 'font-awesome', 'owl.carousel', 'owl.theme', 'overwrites', 'grid', 'single' ) );
 }
 
 function wppt_enqueue_scripts() {
@@ -33,7 +34,14 @@ function wppt_get_grid_item_background() {
 
 	if ( has_post_thumbnail() ) {
 		$post_thumbnail_url = get_the_post_thumbnail_url( null, 'full' );
-		$background .= ", url( $post_thumbnail_url )";
+
+		if ( is_single() || is_page() ) {
+			$background = 'background-image: ';
+		} else {
+			$background .= ', ';
+		}
+
+		$background .= "url( $post_thumbnail_url )";
 	}
 
 	if ( ! empty( $background_position ) ) {
