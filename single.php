@@ -4,7 +4,7 @@
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-			<div class="col-lg-7 col-md-8">
+			<div class="col-lg-7 col-md-7">
 				<?php if ( has_post_thumbnail() ) : ?>
 					<div class="background-cover featured-image" style="<?php wppt_the_grid_item_background(); ?>"></div>
 				<?php endif; ?>
