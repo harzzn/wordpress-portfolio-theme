@@ -29,5 +29,5 @@
 	<?php endif; ?>
 
 <?php endwhile; else : ?>
-	<p><?php _e( 'Sorry, no posts matched your criteria.', 'wordpress-portfolio-theme' ); ?></p>
+	<?php get_template_part( 'template-parts/front-page', 'author-bio-container-large' ); ?>
 <?php endif; ?>
