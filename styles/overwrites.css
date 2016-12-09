@@ -12,6 +12,15 @@ h2 {
 	font-weight: 300;
 }
 
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+
+.btn:focus {
+	outline: none !important;
+}
+
 .container-fluid {
 	padding-left: 10px;
 	padding-right: 10px;

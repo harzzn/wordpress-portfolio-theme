@@ -87,13 +87,6 @@ aside p {
 	cursor: pointer;
 }
 
-.home-link:hover,
-.home-link:focus,
-.tag-list a:hover,
-.tag-list a:focus {
-	text-decoration: none;
-}
-
 .author-links {
 	list-style: none;
 	font-size: 25px;
