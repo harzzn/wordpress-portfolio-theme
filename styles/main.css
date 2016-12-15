@@ -2,6 +2,10 @@ aside p {
 	font-size: 14px;
 }
 
+.screen-reader-text {
+	display: none !important;
+}
+
 .display-block {
 	display: block;
 }
