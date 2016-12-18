@@ -30,7 +30,7 @@
 	?>
 		<ul class="tag-list">
 			<?php foreach ( $tags as $tag ) : ?>
-				<li><a href="<?php echo get_tag_link( $tag->term_id ); ?>" rel="tag" title="All <?php echo $name; ?>'s Portfolio Items Tagged as <?php echo $tag->name ?>"><span class="screen-reader-text">All <?php echo $name; ?>'s Portfolio Items Tagged as </span>#<?php echo $tag->name ?></a></li>
+				<li><a href="<?php echo get_tag_link( $tag->term_id ); ?>" rel="tag" title="All <?php echo $name; ?>'s Portfolio Items Tagged as <?php echo $tag->name ?>"><span class="screen-reader-text">All <?php echo $name; ?>'s Portfolio Items Tagged with </span>#<?php echo $tag->slug ?></a></li>
 			<?php endforeach; ?>
 		</ul>
 	<?php endif; ?>
