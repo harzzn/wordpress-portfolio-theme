@@ -1,7 +1,7 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<article class="grid-item grid-item--post col-lg-4 col-sm-6 col-xs-12">
+	<article class="grid-item grid-item--post <?php wppt_the_grid_item_background_class(); ?> col-lg-4 col-sm-6 col-xs-12">
 		<a href="<?php the_permalink(); ?>" class="grid-item__content js-link-zoom">
-			<div class="grid-item__background-cover background-cover" style="<?php wppt_the_grid_item_background(); ?>"></div>
+			<div class="grid-item__background-cover background-cover" <?php wppt_the_grid_item_background_style(); ?>></div>
 			<div class="grid-item__content__wrapper">
 				<h2><?php the_title(); ?></h2>
 				<div class="grid-item__hover-reveal">
@@ -14,7 +14,7 @@
 						}
 					?>
 
-					<button title="Read More About <?php echo get_the_title(); ?>" class="btn transparent-button read-more-button"><?php _e( 'Read More', 'wordpress-portfolio-theme' ); ?> <i class="fa fa-angle-double-right read-more-button__icon" aria-hidden="true"></i></button>
+					<button title="Read More About <?php echo get_the_title(); ?>" class="btn <?php wppt_the_transparent_button_class(); ?> read-more-button"><?php _e( 'Read More', 'wordpress-portfolio-theme' ); ?> <i class="fa fa-angle-double-right read-more-button__icon" aria-hidden="true"></i></button>
 				</div>
 			</div>
 		</a>

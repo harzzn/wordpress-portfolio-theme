@@ -24,31 +24,60 @@ function wppt_enqueue_scripts() {
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/scripts/main.js', array( 'jquery', 'owl.carousel', 'masonry.pkgd' ) );
 }
 
-function wppt_the_grid_item_background() {
-	echo wppt_get_grid_item_background();
+function wppt_the_transparent_button_class() {
+	echo wppt_get_transparent_button_class();
 }
 
-function wppt_get_grid_item_background() {
-	$background_position = get_post_meta( get_the_ID(), 'wppt_grid_background_position', true );
-	$background = 'background-image: linear-gradient( 180deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) )';
+function wppt_get_transparent_button_class() {
+	$class = 'transparent-button';
 
 	if ( has_post_thumbnail() ) {
-		$post_thumbnail_url = get_the_post_thumbnail_url( null, 'full' );
-
-		if ( is_single() || is_page() ) {
-			$background = 'background-image: ';
-		} else {
-			$background .= ', ';
-		}
-
-		$background .= "url( $post_thumbnail_url )";
+		return $class;
+	} else {
+		return $class . ' transparent-button--black';
 	}
+}
+
+function wppt_the_grid_item_background_class() {
+	echo wppt_get_grid_item_background_class();
+}
+
+function wppt_get_grid_item_background_class() {
+	if ( has_post_thumbnail() ) {
+		return 'grid-item--has-background';
+	} else {
+		return 'grid-item--no-background';
+	}
+}
+
+function wppt_the_grid_item_background_style() {
+	echo wppt_get_grid_item_background_style();
+}
+
+function wppt_get_grid_item_background_style() {
+
+	if ( ! has_post_thumbnail() ) {
+		return '';
+	}
+
+	$background_position = get_post_meta( get_the_ID(), 'wppt_grid_background_position', true );
+	$background = 'style="background-image: linear-gradient( 180deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) )';
+
+	$post_thumbnail_url = get_the_post_thumbnail_url( null, 'full' );
+
+	if ( is_single() || is_page() ) {
+		$background = 'style="background-image: ';
+	} else {
+		$background .= ', ';
+	}
+
+	$background .= "url( $post_thumbnail_url )";
 
 	if ( ! empty( $background_position ) ) {
 		$background .= "; background-position: $background_position";
 	}
 
-	return $background . ';';
+	return $background . '";';
 }
 
 function wppt_get_author() {

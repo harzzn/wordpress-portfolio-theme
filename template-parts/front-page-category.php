@@ -1,4 +1,4 @@
-<div class="grid-item grid-item--category col-lg-4 col-sm-6 col-xs-12">
+<div class="grid-item grid-item--category grid-item--no-background col-lg-4 col-sm-6 col-xs-12">
 	<a href="<?php echo get_category_link( $category->term_id ); ?>" class="grid-item__content">
 		<div class="grid-item__content__wrapper">
 			<h2>#<?php echo $category->name; ?></h2>

@@ -48,27 +48,27 @@
 	right: 0;
 }
 
-.grid-item--post h2 {
+.grid-item--has-background h2 {
 	font-weight: 400;
 	text-shadow: black 0px 1px 0px;
 }
 
-.grid-item--category h2 {
-	margin-bottom: 20px;
+.grid-item--has-background p {
+	color: white;
 }
 
-.grid-item--category h2,
-.grid-item--category p {
+.grid-item--no-background h2,
+.grid-item--no-background p {
 	color: #444444;
+}
+
+.grid-item--no-background h2 {
+	margin-bottom: 20px;
 }
 
 .grid-item--post p,
 .grid-item--category p {
 	font-size: 13px;
-}
-
-.grid-item--post p {
-	color: white;
 }
 
 @media only screen and (max-width : 767px) {

@@ -1,4 +1,4 @@
-<div class="grid-item grid-item--category grid-item--active col-lg-4 col-sm-6 col-xs-12">
+<div class="grid-item grid-item--category grid-item--no-background grid-item--active col-lg-4 col-sm-6 col-xs-12">
 	<div class="grid-item__content">
 		<div class="grid-item__content__wrapper">
 			<h2>

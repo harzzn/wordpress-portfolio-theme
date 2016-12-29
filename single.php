@@ -11,7 +11,7 @@
 				?>
 
 				<?php if ( has_post_thumbnail() ) : ?>
-					<a href="<?php echo $wppt_link_url; ?>" target="_blank" rel="external" title="<?php echo $wppt_link_text; ?>" class="background-cover featured-image display-block" style="<?php wppt_the_grid_item_background(); ?>">
+					<a href="<?php echo $wppt_link_url; ?>" target="_blank" rel="external" title="<?php echo $wppt_link_text; ?>" class="background-cover featured-image display-block" <?php wppt_the_grid_item_background_style(); ?>>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" class="back-home-link"><i class="fa fa-caret-left" aria-hidden="true"></i> <?php _e( 'Back to Listing', 'wordpress-portfolio-theme' ); ?></a>
 					</a>
 				<?php endif; ?>
