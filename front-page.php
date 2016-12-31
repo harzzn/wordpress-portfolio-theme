@@ -6,7 +6,11 @@
 
 		<?php
 			if ( defined( 'WPPT_MAIN_CATEGORIES' ) ) {
-				$categories = get_categories( array( 'include' => WPPT_MAIN_CATEGORIES ) );
+
+				$categories = get_categories( array(
+					'include' => WPPT_MAIN_CATEGORIES,
+					'orderby' => 'include'
+				));
 
 				foreach ( $categories as $category_key => $category ) {
 
