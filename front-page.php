@@ -15,7 +15,7 @@
 				if ( is_array( WPPT_MAIN_CATEGORIES ) ) {
 					$include = WPPT_MAIN_CATEGORIES;
 				} else {
-					$include = explode( WPPT_MAIN_CATEGORIES, ',' );
+					$include = explode( ',', WPPT_MAIN_CATEGORIES );
 				}
 
 				// Create the query to get the categories
