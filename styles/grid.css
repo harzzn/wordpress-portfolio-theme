@@ -1,3 +1,8 @@
+
+/**
+ * Grid listing styles
+ */
+
 .grid-item,
 .grid-item p {
 	transition: all .5s ease-in-out;
@@ -70,6 +75,10 @@
 .grid-item--category p {
 	font-size: 13px;
 }
+
+/**
+ * Grid listing responsiveness
+ */
 
 @media only screen and (max-width : 767px) {
 

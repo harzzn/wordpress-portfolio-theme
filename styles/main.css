@@ -1,14 +1,22 @@
-aside p {
-	font-size: 14px;
-}
+/**
+ * WordPress specific
+ */
 
 .screen-reader-text {
 	display: none !important;
 }
 
+/**
+ * Helpers
+ */
+
 .display-block {
 	display: block;
 }
+
+/**
+ * General components
+ */
 
 .body-zoom {
 	transition: all .5s ease-in-out;
@@ -29,6 +37,10 @@ aside p {
 	border-radius: 1000px;
 	max-height: 200px;
 }
+
+/**
+ * Buttons
+ */
 
 .transparent-button {
 	color: white;
@@ -61,6 +73,14 @@ aside p {
 .read-more-button:hover .read-more-button__icon {
 	display: inline-block;
 	padding-left: 10px;
+}
+
+/**
+ * Sidebar
+ */
+
+aside p {
+	font-size: 14px;
 }
 
 .tag-list {
